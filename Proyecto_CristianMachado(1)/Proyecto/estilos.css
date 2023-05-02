@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+h1,h4,p {
+    margin: 0px;
+}
+
+
+.container {
+   width: 95%;
+   max-width: 1800px;
+   max-height: 1000px;
+   margin: 20px 20px;
+   display: grid;
+   grid-gap: 20px; /*espacio entre las filas y las columnas*/
+   grid-template-columns: 500px auto 250px ; /*numero y tamaño  de las columnas*/
+   grid-template-rows: 100px 50px 500px 400px 100px ; /*numero y tamaño de las filas*/
+}
+
+header {
+    color: #fff; /*colo del texto*/
+    grid-column: 1 / 4; /*El header empieze en la columna 1 y acaba en la 4*/
+    text-align: center; /*Posicion centrada del texto*/
+    text-shadow: 2px 0 0 #000,  /*Borde de los textos*/
+				-2px 0 0 #000, 
+				0 2px 0 #000, 
+				0 -2px 0 #000, 
+				1px 1px #000,
+				-1px -1px 0 #000,
+				1px -1px 0 #000, 
+				-1px 1px 0 #000;
+}
+
+
+
+/*Composicion de la barra de navegacion*/
+nav {
+   /* background-color: aqua;*/
+    grid-row: 2 / 2; /*el nav empieza en la fila 2 y acaba en la 2*/
+    grid-column: 1 / 4; /*empieza en la fila 1 y acaba en la 4*/
+    display: flex;
+    flex-direction: row; /*direccion del contenido flex en fila*/
+    gap: 300px; /*espacio*/
+   
+}
+
+a {
+    position: relative; /*establece la posicion como relativa*/
+    padding: 15px;
+    text-align: center;
+    display: block; /*establece el elemento {a} como un bloque para que ocupe todo el ancho posible*/
+    font-weight: 300; /*peso de la fuente*/
+    text-decoration: none; /*elimina la decoracion subrayada del texto*/
+    text-transform: uppercase; /*pasar a mayusculas*/
+    width: 75px; /*ancho del elemento*/
+    overflow: hidden; /*oculta el contenido si es mas ancho del establecido*/
+    border-radius: 10px; /*establece la curvatura de la esquina*/
+}
+
+a span {
+    position: relative; /*el elemento span dentro del a pasa a ser relativo*/
+    color: #fff;
+    font-size: 10px; /*tamaño de letra*/
+    font-family: Arial; /*tipo de fuente de letra*/
+    z-index: 1;  /*establece la posicion en el eje z del span como 1, lo que lo coloca encima del elemento a*/
+}
+
+a .liquido {
+    position: absolute; /*el elemento con la clase liquido pasa a absoluto*/
+    top: -80px; /*posicion de la clase por encima del borde superior del elemento a*/
+    left: 0; /*Alinea con el borde izquierdo*/
+    width: 287px; /*ancho*/
+    height: 230px; /*altura*/
+    background:#4973ff ;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, .5); /*Agrega una sombra interna al elemento con la clase "liquido" con un desenfoque de 50 píxeles y un opacidad del 50%*/
+}
+
+a .liquido::after,
+a .liquido::before {
+    content: ''; /*contenido vacio de los pseudo elementos*/
+    width: 150%;
+    height: 200%;
+    position: absolute;
+    top:0; /*posicion superior como 0*/
+    left: 10%; /*posicion izquierda de los elementos con el 10% del ancho*/
+    transform: translate(-50%,-75%); /*translada los elementos en la posicion x e y*/
+    background: #1D202B;
+}
+
+a .liquido::before {
+    border-radius: 45%;
+    background: #1D202B(20, 20, 20, 1); /*negro oscuro con transparencia*/
+    animation: animate 3s linear infinite; /*agrega una animacion llamada "animate" de 3s, tiempo lineal y infinitas repeticiones*/
+} 
+
+a.liquido::after {
+    border-radius: 40%;
+    background: #1D202B(20, 20, 20, .5);
+    animation: animate 5s linear infinite;
+}
+
+a:hover .liquido {
+    top: -105px;
+}
+
+main {
+    border-style: dashed;
+    border-radius: 5%;
+    color: #fff;
+    text-shadow: 2px 0 0 #000,  /*Borde de los textos*/
+                -2px 0 0 #000, 
+                0 2px 0 #000, 
+                0 -2px 0 #000, 
+                1px 1px #000,
+                -1px -1px 0 #000,
+                1px -1px 0 #000, 
+                -1px 1px 0 #000;
+    
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+}
+
+h1 {
+    text-align: center;
+}
+
+.juanma {
+    text-align: center;
+}
+
+.BonJovi {
+    text-align: center;
+}
+
+.Aitana {
+    text-align: center;
+}
+
+.Coachella {
+    text-align: center;
+}
+
+.boton {
+    background: #4973ff;
+	display: center;
+	width: 10%;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+	padding: 10px;
+	border: none;
+	border-radius: 100px;
+	font-family: 'Roboto', sans-serif;
+	cursor: pointer;
+    text-decoration: none;
+    color: initial;
+}
+
+aside{
+ 
+    grid-row: 3 / 5;
+    grid-column: 3 / 4;
+    text-align: center;
+    display: flex;
+    align-items: center; /*centrar el texto*/
+    justify-content: center;
+}
+
+
+.banner {
+	border-radius: 10px;
+	text-align: center;
+	padding: 50px;
+	background-size: cover;
+	background-position: center center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+    color: #fff;
+    width: 100%;
+}
+
+.banner ul {
+	list-style: none;
+}
+
+.banner ul li {
+	margin: 15px;
+	font-weight: bold;
+}
+
+.banner .boton {
+	background: #FFD600;
+	display: block;
+	width: 100%;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+	padding: 10px;
+	border: none;
+	border-radius: 100px;
+	font-family: 'Roboto', sans-serif;
+	cursor: pointer;
+}
+
+
+
+section {
+    /*background-color: red;*/
+    grid-column: 1 / 3;
+    grid-row: 4 / 5;
+}
+
+footer {
+    color: #fff;
+    grid-column: 1 / 4;
+}
+
+@keyframes animate {
+    0% {
+     transform: translate(-50%,-75%) rotate(0deg);
+    } 
+    100% {
+     transform: translate(-50%,-75%) rotate(360deg);
+    }
+ }
+
+@media  (min-width:600px ) and (max-width:800px) {
+ .container {
+    grid-template-columns: 20vw 1fr;
+    grid-template-rows: 150px 58px 250px 300px 100px;
+ }
+
+ header {
+    grid-column: 1 / 3;
+ }
+
+ nav {
+    grid-column: 1 / 3;
+ }
+
+ main {
+    grid-row: 3 /4 ;
+ }
+
+ aside {
+    grid-column: 1 / 3;
+    grid-row: 4 / 5;
+ }
+
+ section {
+    grid-row: 5 / 6;
+ }
+    
+}
